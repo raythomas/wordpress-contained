@@ -32,7 +32,7 @@ To execute Ansible Playbook it will be **assumed** that you have the following t
 1.) cd into the WordPress playbook (there should be a site.yml file present): 
 2.) Execute the playbook with a user account that has SUDO access.
 >- type: cd wordpress-contained
->- type: ansible-playbook site.yml -u  -K -l RHEL7
+>- type: ansible-playbook site.yml -u sudoUser -K -l RHEL7
 
 ### Step 3 -- Verify that you can log into your WordPress and PHPMyAdmin sites.
 
