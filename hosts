@@ -1,0 +1,13 @@
+[RHEL7]
+unicorn ansible_ssh_port=22 ansible_host=11.0.1.237
+
+[nodes:children]
+application
+database
+
+[application]
+unicorn-app ansible_ssh_port=22 ansible_host=11.0.1.238
+
+
+[database]
+unicorn-db ansible_ssh_port=22 ansible_host=11.0.1.239

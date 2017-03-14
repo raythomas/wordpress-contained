@@ -1,0 +1,8 @@
+---
+
+#MariaDB variables
+mysql_root_password: password
+
+
+#Wordpress variables
+wordpress_mysql_root_password: password

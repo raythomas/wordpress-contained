@@ -1,0 +1,66 @@
+---
+
+- name: Install docker and dependencies via YUM
+  yum: name={{ item }} update_cache=yes state=latest
+  with_items:
+    - docker
+    - python2-pip
+    - python-devel
+    - python-setuptools
+  ignore_errors: no
+  when:
+    ansible_pkg_mgr == "yum"
+
+- name: Install pip
+  easy_install:
+      name=pip
+
+- name: Install python client for Docker 
+  pip:
+      name=docker-py
+      state=latest
+      
+
+
+# - name: Install Docker
+#   pip:
+#       name=docker
+#       state=latest
+
+
+
+- service:
+    name: docker
+    enabled: yes
+
+- service:
+    name: docker
+    state: started
+
+
+
+## Create Docker group
+
+- name: Create a docker group
+  group: 
+      name=docker 
+      state=present
+
+- name: Add user(s) to docker group
+  user: 
+      name={{ item }} 
+      group=docker 
+      state=present
+  with_items: docker_users
+  when: docker_users is defined
+
+- name: Configure Docker 
+  template: 
+      src=default_docker.j2 
+      dest=/etc/default/docker 
+      mode=0644 
+      owner=root 
+      group=root
+  notify: restart docker
+
+   

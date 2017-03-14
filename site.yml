@@ -1,0 +1,11 @@
+---
+- name: Install Wordpress by way of Docker Containers
+  hosts: all
+  gather_facts: yes
+  become: yes
+
+  roles:
+    - docker
+    - wordpress_docker
+
+
