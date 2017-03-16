@@ -15,7 +15,7 @@ To execute Ansible Playbook it will be **assumed** that you have the following t
 > **Task to be completed before hand:**
 
 > - A minimal [installation of CentOS 7/ RHEL 7][1] setup and ready to go.
-> - A [user account][2] with sudo access and [SSH keys][5] configured. (I recommend ssh-copy-id user@hostname.example.com if you didn't already put it in a KiskStart file.)
+> - A [user account][2] with sudo access and [SSH keys][5] configured. (I recommend ssh-copy-id user@hostname.example.com if you didn't already put it in a KickStart file.)
 > - Ansible 2.0 or greater installed on Ansible host. I personally prefer [CentOS][3] for the Asible host, but any popular [Linux distros][4] should do.
 
 
@@ -45,7 +45,7 @@ To execute Ansible Playbook it will be **assumed** that you have the following t
 
 
 
-#Authors
+# Authors
 ---
 This was created by Ray Thomas (ray.thomas@gmail.com).
 
